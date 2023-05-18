@@ -1368,9 +1368,6 @@ Hardhat Network's forking functionality only works with blocks from at least spu
             rpcLogs.push(...receipt.logs);
         }
         this._filters.forEach((filter, key) => {
-            if (filter.deadline.valueOf() < new Date().valueOf()) {
-                this._filters.delete(key);
-            }
             switch (filter.type) {
                 case filter_1.Type.BLOCK_SUBSCRIPTION:
                     const hash = block.hash();
